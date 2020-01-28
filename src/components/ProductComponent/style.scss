@@ -1,0 +1,43 @@
+
+$appBarcolor:#009688;
+$bgcolor: #f3f6ff;
+.productlist{
+    height: calc(100vh - 64px);
+    background-color: $bgcolor;
+    position: absolute;
+    top:64;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    .products{
+        width: 80%;
+        max-width: 800px;
+        margin: auto;
+        margin-top: 50px;
+        .customlisttile{
+            height: 65px;
+            background-color: white;
+            box-shadow:  0px 5px 15px 0px rgba(191,191,191,1);;
+            margin-top: 15px;
+            border-radius: 3px;
+            line-height: 4;
+            padding: 0px 10px;
+            .info{
+                display: inline-block;
+            }
+            .btns{
+                float: right;
+                // line-height: 4;
+                 button{
+                     margin-left:10px;
+                    color: #8c979b;
+                    background: #e9edf4;
+                    padding: 8px;
+                    svg{
+                        font-size: 20px;
+                    }
+                 }
+            }
+        }
+    }
+}

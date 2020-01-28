@@ -11,6 +11,8 @@ import { Helmet } from 'react-helmet';
 import { Switch, Route } from 'react-router-dom';
 import LoginContainer from '../LoginContainer';
 import HeaderContainer from '../HeaderContainer';
+import FormContainer from '../FormContainer';
+import ProductContainer from '../ProductContainer';
 // import NoMatch from '../NoMatch'
 
 export default function App() {
@@ -26,6 +28,8 @@ export default function App() {
       <HeaderContainer />
       <Switch>
         <Route exact path="/" component={LoginContainer} />
+        <Route path="/form" component={FormContainer} />
+        <Route path="/products" component={ProductContainer} />
         {/* <Route path="*" component={NoMatch} /> */}
       </Switch>
     </div>

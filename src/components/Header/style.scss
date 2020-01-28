@@ -1,0 +1,23 @@
+
+$appBarcolor:#009688;
+$highlightColor:#00897B;
+header{
+    background-color: $appBarcolor !important;
+    .apptoolbar{
+        display: flex;
+        justify-content: space-between;
+    }
+    .rightdiv{
+        text-align: right;
+        button{
+            color: white;
+            padding-right:  15px;
+            padding-left: 15px;
+            margin-left: 10px;
+            border-radius: 25px;
+        }
+        .activeButton{
+            background-color: $highlightColor !important;
+        }
+    }
+}

@@ -1,0 +1,22 @@
+
+$appBarcolor:#009688;
+
+.productForm{
+    max-width: 400px;
+    margin: auto;
+    margin-top: 40px;
+    .fieldwrapper{
+        text-align: center;
+        .MuiFormControl-root{
+            width: 80%;
+        }
+    }
+    .submitbtn{
+        color: White !important;
+        background-color: $appBarcolor !important;
+        left: 10%;
+        margin-top: 40px;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+}

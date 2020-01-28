@@ -23,7 +23,7 @@ import { createBrowserHistory as createHistory } from 'history';
 
 // Import root app
 import App from './Containers/App';
-import "./index.css" 
+import "./index.css"
 
 // Import Language Provider
 // import LanguageProvider from 'containers/LanguageProvider';
@@ -69,15 +69,15 @@ const initialState = {};
 const history = createHistory();
 //const history = useHistory();
 //const store = configureStore(initialState, history);
-const store = configureStore(initialState,history);
+const store = configureStore(initialState, history);
 const MOUNT_NODE = document.getElementById('app');
 
 const render = () => {
   ReactDOM.render(
     <Provider store={store}>
-        <ConnectedRouter history={history}>
-          <App />
-        </ConnectedRouter>
+      <ConnectedRouter history={history}>
+        <App />
+      </ConnectedRouter>
     </Provider>,
     MOUNT_NODE
   );

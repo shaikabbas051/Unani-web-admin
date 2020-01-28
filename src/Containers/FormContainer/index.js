@@ -10,13 +10,12 @@ import { compose } from "redux";
 import { createStructuredSelector } from "reselect";
 import injectReducer from "../../utils/injectReducer";
 import injectSaga from "../../utils/injectSaga";
-import HeaderComponent from "../../components/Header";
+import FormComponent from "../../components/ProductForm";
 import { HeaderSelector } from "./selectors";
 import reducer from "./reducer";
 import saga from "./saga";
 import {
 } from "./actions";
-import { push } from "react-router-redux";
 
 export class HeaderContainer extends React.PureComponent {
   constructor(props) {
@@ -28,15 +27,11 @@ export class HeaderContainer extends React.PureComponent {
 
   componentDidMount() { }
   componentWillReceiveProps(newProps) { }
-  changeroute = (path) => {
-    console.log(path)
-    this.props.changeroute(path);
 
-  }
   render() {
     return (
       <div>
-        <HeaderComponent changeroute={this.changeroute} />
+        <FormComponent />
       </div>
     );
   }
@@ -44,9 +39,7 @@ export class HeaderContainer extends React.PureComponent {
 HeaderContainer.propTypes = {};
 export function mapDispatchToProps(dispatch) {
   return {
-    changeroute: (path) => {
-      dispatch(push(`/kkkkk`))
-    }
+
   };
 }
 const mapStateToProps = createStructuredSelector({

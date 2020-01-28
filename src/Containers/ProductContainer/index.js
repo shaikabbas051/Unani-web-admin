@@ -10,15 +10,14 @@ import { compose } from "redux";
 import { createStructuredSelector } from "reselect";
 import injectReducer from "../../utils/injectReducer";
 import injectSaga from "../../utils/injectSaga";
-import HeaderComponent from "../../components/Header";
+import ProductComponent from "../../components/ProductComponent";
 import { HeaderSelector } from "./selectors";
 import reducer from "./reducer";
 import saga from "./saga";
 import {
 } from "./actions";
-import { push } from "react-router-redux";
 
-export class HeaderContainer extends React.PureComponent {
+export class ProductContainer extends React.PureComponent {
   constructor(props) {
     super(props);
     this.state = {
@@ -28,25 +27,19 @@ export class HeaderContainer extends React.PureComponent {
 
   componentDidMount() { }
   componentWillReceiveProps(newProps) { }
-  changeroute = (path) => {
-    console.log(path)
-    this.props.changeroute(path);
 
-  }
   render() {
     return (
       <div>
-        <HeaderComponent changeroute={this.changeroute} />
+        <ProductComponent />
       </div>
     );
   }
 }
-HeaderContainer.propTypes = {};
+ProductContainer.propTypes = {};
 export function mapDispatchToProps(dispatch) {
   return {
-    changeroute: (path) => {
-      dispatch(push(`/kkkkk`))
-    }
+
   };
 }
 const mapStateToProps = createStructuredSelector({
@@ -55,4 +48,4 @@ const mapStateToProps = createStructuredSelector({
 const withConnect = connect(mapStateToProps, mapDispatchToProps);
 const withReducer = injectReducer({ key: "header", reducer });
 const withSaga = injectSaga({ key: "header", saga });
-export default compose(withReducer, withSaga, withConnect)(HeaderContainer);
+export default compose(withReducer, withSaga, withConnect)(ProductContainer);
