@@ -21,12 +21,12 @@ export class HeaderContainer extends React.PureComponent {
   constructor(props) {
     super(props);
     this.state = {
-     
+
     };
   }
 
-  componentDidMount() {}
-  componentWillReceiveProps(newProps) {}
+  componentDidMount() { }
+  componentWillReceiveProps(newProps) { }
 
   render() {
     return (
@@ -36,16 +36,14 @@ export class HeaderContainer extends React.PureComponent {
     );
   }
 }
-HomePage.propTypes = {};
+HeaderContainer.propTypes = {};
 export function mapDispatchToProps(dispatch) {
   return {
-    loginAction: data => {
-      dispatch(loginAction(data));
-    },
+
   };
 }
 const mapStateToProps = createStructuredSelector({
-  storeData: LoginSelector()
+  storeData: HeaderSelector()
 });
 const withConnect = connect(mapStateToProps, mapDispatchToProps);
 const withReducer = injectReducer({ key: "header", reducer });

@@ -13,7 +13,7 @@ import { loginRequestSuccess } from './actions';
  * Github repos request/response handler
  */
 
-export function* loginUser(action){
+export function* loginUser(action) {
   // Select username from store
   document.getElementById('loadingIndicator').style.display = 'flex';
   const requestURL = '';
@@ -24,31 +24,29 @@ export function* loginUser(action){
   }
   const requestAttrs = {
     method: 'POST',
-    headers:{
-      'Content-Type' : 'application/json'
+    headers: {
+      'Content-Type': 'application/json'
     },
     body: JSON.stringify(userObj)
   }
   try {
     // Call our request helper (see 'utils/request')
 
-    const loginResponse = yield call(request, requestURL,requestAttrs);
+    const loginResponse = yield call(request, requestURL, requestAttrs);
     document.getElementById('loadingIndicator').style.display = 'none';
-    yield put(loginRequestSuccess(loginResponse));
-    
+    // yield put(loginRequestSuccess(loginResponse));
+
   } catch (err) {
     document.getElementById('loadingIndicator').style.display = 'none';
-    if(err.response.status == "403")
-    {
-      yield put(requestLoginFail(err.response.status));
+    if (err.response.status == "403") {
+      // yield put(requestLoginFail(err.response.status));
       console.log("403 failure")
     }
-    else
-    {
-      yield put(requestServiceFailed(err.response.status));
+    else {
+      // yield put(requestServiceFailed(err.response.status));
     }
-    
-}
+
+  }
 }
 /**
  * Root saga manages watcher lifecycle
