@@ -1,0 +1,35 @@
+$appBarcolor: #26a69a;
+$highlightColor: #00897b;
+$darkcolor: #00796b;
+$cardheight: 500px;
+.loginComponent {
+  background-color: $appBarcolor !important;
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  padding-top: calc((100vh - 500px) / 2);
+  .logincard {
+    height: $cardheight;
+    // width: 400px;
+    margin: auto;
+
+    .MuiCard-root {
+      height: 100%;
+    }
+    .cardheader {
+      background-color: $darkcolor !important;
+      height: 100px;
+      text-transform: uppercase;
+      color: white !important;
+      font-size: 30px;
+      font-weight: bold;
+      line-height: 3.3;
+      text-align: center;
+    }
+    .cardform {
+      text-align: center;
+    }
+  }
+}
