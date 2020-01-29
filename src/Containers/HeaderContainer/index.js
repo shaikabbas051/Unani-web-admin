@@ -38,7 +38,7 @@ export class HeaderContainer extends React.PureComponent {
     ) {
       return (
         <div>
-          <HeaderComponent changeroute={this.changeroute} />
+          <HeaderComponent changeroute={this.changeroute} currentpath={this.props.routeData.location.pathname} />
         </div>
       );
     }

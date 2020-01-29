@@ -1,7 +1,7 @@
 $appBarcolor: #26a69a;
 $highlightColor: #00897b;
 $darkcolor: #00796b;
-$cardheight: 500px;
+$cardheight: 400px;
 .loginComponent {
   background-color: $appBarcolor !important;
   position: absolute;
@@ -9,7 +9,7 @@ $cardheight: 500px;
   right: 0;
   left: 0;
   bottom: 0;
-  padding-top: calc((100vh - 500px) / 2);
+  padding-top: calc((100vh - 400px) / 2);
   .logincard {
     height: $cardheight;
     // width: 400px;
@@ -27,9 +27,28 @@ $cardheight: 500px;
       font-weight: bold;
       line-height: 3.3;
       text-align: center;
+      letter-spacing: 6px;
     }
     .cardform {
       text-align: center;
+      button{
+        background-color: $appBarcolor !important;
+        color: white;
+        margin-top: 20px;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        width:100px;
+      }
+      .fieldwrapper{
+        margin-top:10px
+      }
+      .fieldwrapper:first-child{
+        margin-top:25px
+      }
+      .errormsg{
+        margin-top: 20px;
+        color:red;
+      }
     }
   }
 }

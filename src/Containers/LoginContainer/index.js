@@ -14,7 +14,7 @@ import Login from "../../components/Login";
 import { LoginSelector } from "./selectors";
 import reducer from "./reducer";
 import saga from "./saga";
-import {  replace } from "react-router-redux";
+import { replace } from "react-router-redux";
 
 export class HomePage extends React.PureComponent {
   constructor(props) {
@@ -22,15 +22,15 @@ export class HomePage extends React.PureComponent {
     this.state = {};
   }
 
-  componentDidMount() {}
-  componentWillReceiveProps(newProps) {}
-  logins = () => {
-    this.props.loginAction("abcd");
+  componentDidMount() { }
+  componentWillReceiveProps(newProps) { }
+  gotoHome = () => {
+    this.props.gotoHome();
   };
   render() {
     return (
       <div>
-        <Login logins={this.logins} />
+        <Login gotoHome={this.gotoHome} />
       </div>
     );
   }
@@ -38,7 +38,7 @@ export class HomePage extends React.PureComponent {
 HomePage.propTypes = {};
 export function mapDispatchToProps(dispatch) {
   return {
-    loginAction: data => {
+    gotoHome: () => {
       dispatch(replace("/form"));
     }
   };

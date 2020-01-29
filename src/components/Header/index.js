@@ -22,12 +22,15 @@ class Header extends React.Component {
             <Typography variant="h6">UNANI</Typography>
             <div className={"rightdiv"}>
               <Button
-                className={true ? "activeButton" : ""}
+                className={this.props.currentpath == "/form" ? "activeButton" : ""}
                 onClick={() => this.props.changeroute("form")}
               >
                 Add Product
               </Button>
-              <Button onClick={() => this.props.changeroute("products")}>
+              <Button
+                className={this.props.currentpath == "/products" ? "activeButton" : ""}
+
+                onClick={() => this.props.changeroute("products")}>
                 View Products
               </Button>
               <Button>Three</Button>
@@ -40,7 +43,6 @@ class Header extends React.Component {
 }
 
 Header.propTypes = {
-  username: PropTypes.string
 };
 
 export default Header;
