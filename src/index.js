@@ -9,21 +9,21 @@ import "core-js/stable";
 import "regenerator-runtime/runtime";
 
 // Import all the third party stuff
-import React from 'react';
-import ReactDOM from 'react-dom';
-import { Provider } from 'react-redux';
-import { ConnectedRouter } from 'react-router-redux';
+import React from "react";
+import ReactDOM from "react-dom";
+import { Provider } from "react-redux";
+import { ConnectedRouter } from "react-router-redux";
 
 // import {BrowserRouter as Router,Route } from 'react-router-dom'
 // import FontFaceObserver from 'fontfaceobserver';
 //import createHistory from 'history/createBrowserHistory';
-import { createBrowserHistory as createHistory } from 'history';
+import { createBrowserHistory as createHistory } from "history";
 
 // import 'sanitize.css/sanitize.css';
 
 // Import root app
-import App from './Containers/App';
-import "./index.css"
+import App from "./Containers/App";
+import "./index.css";
 
 // Import Language Provider
 // import LanguageProvider from 'containers/LanguageProvider';
@@ -43,15 +43,15 @@ import "./index.css"
 // import '!file-loader?name=[name].[ext]!./images/icon-384x384.png';
 // import '!file-loader?name=[name].[ext]!./images/icon-512x512.png';
 // import '!file-loader?name=[name].[ext]!./manifest.json';
-import 'file-loader?name=[name].[ext]!./.htaccess'; // eslint-disable-line import/extensions
+import "file-loader?name=[name].[ext]!./.htaccess"; // eslint-disable-line import/extensions
 /* eslint-enable import/no-webpack-loader-syntax */
 
-import configureStore from './configureStore';
+import configureStore from "./configureStore";
 
 // Import i18n messages
 
 // Import CSS reset and Global Styles
-import './global-styles';
+import "./global-styles";
 
 // Observe loading of Open Sans (to remove open sans, remove the <link> tag in
 // the index.html file and this observer)
@@ -70,7 +70,7 @@ const history = createHistory();
 //const history = useHistory();
 //const store = configureStore(initialState, history);
 const store = configureStore(initialState, history);
-const MOUNT_NODE = document.getElementById('app');
+const MOUNT_NODE = document.getElementById("app");
 
 const render = () => {
   ReactDOM.render(
@@ -87,7 +87,7 @@ if (module.hot) {
   // Hot reloadable React components and translation json files
   // modules.hot.accept does not accept dynamic dependencies,
   // have to be constants at compile-time
-  module.hot.accept(['./i18n', '../src/Containers/App'], () => {
+  module.hot.accept(["./i18n", "../src/Containers/App"], () => {
     ReactDOM.unmountComponentAtNode(MOUNT_NODE);
     render();
   });

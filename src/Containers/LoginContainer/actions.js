@@ -15,14 +15,7 @@
  *    }
  */
 
-import {
-  LOGIN_ACTION,
-  LOGINREQUESTSUCCEEDED,
-  LOGINREQUESTFAILED,
-  CLEARTOKEN,
-  LOGINFAIL,
-  RESET_LOGIN
-} from "./constants";
+import { LOGIN_ACTION_NEW, LOGINREQUESTSUCCEEDED } from "./constants";
 
 /**
  * Changes the input field of the form
@@ -33,8 +26,9 @@ import {
  */
 
 export function loginAction(data) {
+  console.log("a");
   return {
-    type: LOGIN_ACTION,
+    type: LOGIN_ACTION_NEW,
     payload: data
   };
 }

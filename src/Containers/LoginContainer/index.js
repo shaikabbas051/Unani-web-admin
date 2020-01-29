@@ -14,25 +14,24 @@ import Login from "../../components/Login";
 import { LoginSelector } from "./selectors";
 import reducer from "./reducer";
 import saga from "./saga";
-import {
-  loginAction,
-} from "./actions";
+import { loginAction } from "./actions";
+import { push, replace } from "react-router-redux";
 
 export class HomePage extends React.PureComponent {
   constructor(props) {
     super(props);
-    this.state = {
-
-    };
+    this.state = {};
   }
 
   componentDidMount() {}
   componentWillReceiveProps(newProps) {}
-
+  logins = () => {
+    this.props.loginAction("abcd");
+  };
   render() {
     return (
       <div>
-        <Login />
+        <Login logins={this.logins} />
       </div>
     );
   }
@@ -41,8 +40,8 @@ HomePage.propTypes = {};
 export function mapDispatchToProps(dispatch) {
   return {
     loginAction: data => {
-      dispatch(loginAction(data));
-    },
+      dispatch(replace("/form"));
+    }
   };
 }
 const mapStateToProps = createStructuredSelector({

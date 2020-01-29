@@ -14,43 +14,47 @@ import HeaderComponent from "../../components/Header";
 import { HeaderSelector } from "./selectors";
 import reducer from "./reducer";
 import saga from "./saga";
-import {
-} from "./actions";
+import { sample } from "./actions";
 import { push } from "react-router-redux";
+import { RouteSelector } from "../../Store/rootselector";
 
 export class HeaderContainer extends React.PureComponent {
   constructor(props) {
     super(props);
-    this.state = {
-
-    };
+    this.state = {};
   }
-
-  componentDidMount() { }
-  componentWillReceiveProps(newProps) { }
-  changeroute = (path) => {
-    console.log(path)
+  componentDidMount() {
+    // this.props.sample();
+  }
+  changeroute = path => {
     this.props.changeroute(path);
-
-  }
+    // this.props.sample();
+  };
   render() {
-    return (
-      <div>
-        <HeaderComponent changeroute={this.changeroute} />
-      </div>
-    );
+    console.log(this.props);
+    if (
+      this.props.routeData.location.pathname &&
+      this.props.routeData.location.pathname !== "/"
+    ) {
+      return (
+        <div>
+          <HeaderComponent changeroute={this.changeroute} />
+        </div>
+      );
+    }
+    return <div style={{ display: "none" }}></div>;
   }
 }
 HeaderContainer.propTypes = {};
 export function mapDispatchToProps(dispatch) {
   return {
-    changeroute: (path) => {
-      dispatch(push(`/kkkkk`))
-    }
+    changeroute: path => dispatch(push(`/${path}`)),
+    sample: () => dispatch(sample())
   };
 }
 const mapStateToProps = createStructuredSelector({
-  storeData: HeaderSelector()
+  headerData: HeaderSelector(),
+  routeData: RouteSelector()
 });
 const withConnect = connect(mapStateToProps, mapDispatchToProps);
 const withReducer = injectReducer({ key: "header", reducer });

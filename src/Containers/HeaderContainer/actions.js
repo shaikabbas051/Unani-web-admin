@@ -15,9 +15,7 @@
  *    }
  */
 
-import {
-  
-} from "./constants";
+import { SAMPLE } from "./constants";
 
 /**
  * Changes the input field of the form
@@ -27,4 +25,9 @@ import {
  * @return {object}    An action object with a type of CHANGE_USERNAME
  */
 
-
+export function sample() {
+  return {
+    type: SAMPLE,
+    data: "1"
+  };
+}

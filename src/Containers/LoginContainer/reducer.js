@@ -10,9 +10,7 @@
  *   return state.set('yourStateVariable', true);
  */
 import { fromJS } from "immutable";
-import {
-  LOGINREQUESTSUCCEEDED,
-} from "./constants";
+import { LOGINREQUESTSUCCEEDED, LOGIN_ACTION_NEW } from "./constants";
 // The initial state of the App
 export const initialState = fromJS({
   UserloggedIn: false,
@@ -30,10 +28,10 @@ function LoginReducer(state, action) {
   }
   switch (action.type) {
     case LOGINREQUESTSUCCEEDED:
-      return state
-        .set("loginToken", action.payload.token)
-        
-    
+      return state.set("loginToken", action.payload.token);
+    case LOGIN_ACTION_NEW:
+      console.log("reducer");
+      return state.set("abcd", 123);
     default:
       return state;
   }

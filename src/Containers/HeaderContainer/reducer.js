@@ -10,22 +10,25 @@
  *   return state.set('yourStateVariable', true);
  */
 import { fromJS } from "immutable";
-import {
-} from "./constants";
+import { ROUTE_CHANGE, SAMPLE } from "./constants";
 // The initial state of the App
 export const initialState = fromJS({
-
+  currentpath: "/",
+  counter: 0
 });
 
-function HeaderReducer(state, action) {
+export default function HeaderReducer(state, action) {
   if (!state) {
     return initialState;
   }
   switch (action.type) {
-    
+    case ROUTE_CHANGE:
+      console.log("route change");
+      return initialState;
+    case SAMPLE:
+      console.log("inside sample");
+      return state.set("counter", 1);
     default:
       return state;
   }
 }
-
-export default HeaderReducer;
