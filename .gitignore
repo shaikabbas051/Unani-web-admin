@@ -29,3 +29,4 @@ npm-debug.log
 ESLintReport.html
 package-lock.json
 debug.log
+yarn.locks
