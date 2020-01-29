@@ -14,8 +14,7 @@ import Login from "../../components/Login";
 import { LoginSelector } from "./selectors";
 import reducer from "./reducer";
 import saga from "./saga";
-import { loginAction } from "./actions";
-import { push, replace } from "react-router-redux";
+import {  replace } from "react-router-redux";
 
 export class HomePage extends React.PureComponent {
   constructor(props) {
